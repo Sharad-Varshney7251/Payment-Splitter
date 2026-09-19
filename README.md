@@ -30,6 +30,12 @@
 
 ## 2. Key Features
 
+- 📷 **QR Scanner + Auto UPI Detection**:
+  - Live browser camera scanning with mobile rear-camera priority (`facingMode: "environment"`).
+  - Drag-and-drop or click-to-upload QR image fallback for desktop or gallery images.
+  - Automatic parameter extraction: UPI ID (`pa`), Payee Name (`pn`), Amount (`am`), Currency (`cu`), and Note (`tn`).
+  - Intelligent amount reconciliation: prompts *"Use ₹X from scanned QR?"* with `[Use Scanned Amount]` / `[Keep My Amount]` without overwriting user data.
+  - Non-UPI QR inspection and friendly rejection notice.
 - 🎯 **Mathematical Precision (Integer Paise Engine)**: All currency calculations are computed internally in integer paise (`1 Rupee = 100 Paise`), eliminating floating-point errors (e.g. `₹4,999.99` when the total is `₹5,000`).
 - ⚡ **Three Flexible Split Strategies**:
   - **Equal Split**: Even division into $N$ parts with deterministic remainder paise balancing.
@@ -44,12 +50,13 @@
   - **Clipboard Copy**: One-click copy for UPI ID and UPI payment link with toast confirmations.
   - **Web Share API**: Native device sharing with clipboard fallback.
 - 🔒 **Zero-Knowledge Privacy**:
-  - 100% client-side execution in the browser.
+  - 100% client-side execution in the browser. Camera streams and images are processed in-memory and never uploaded to any server.
   - No database, no backend server, no external API telemetry, no persistent cookies or local credential logging.
 - 🌓 **Fintech UI/UX & Dark Mode**:
   - Styled with a sleek slate, emerald, and indigo palette.
   - Persistent theme switching (`localStorage`) and system preference detection.
   - Fully responsive from 320px mobile screens to 4K displays.
+
 
 ---
 
